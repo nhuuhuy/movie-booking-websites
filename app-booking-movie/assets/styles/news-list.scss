@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+// 1. Configuration and helpers
+@import '_utils/variables',
+'_utils/functions',
+'_utils/mixins',
+'_utils/placeholders';
+
+@import '_components/buttons';
+@import '_layout/news.scss';

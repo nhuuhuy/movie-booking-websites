@@ -1,0 +1,85 @@
+:host /deep/ .navbar {
+  background: $background-color;
+  &-nav {
+    .nav-item{
+      @include mq(phablet, max) {
+        .nav-link {
+          padding: 2rem!important;
+
+        }
+        &:not(:last-child) {
+          border-bottom: 1px solid $border-color;
+        }
+      }
+    }
+    .nav-link {
+      padding: 0px 10px !important;
+      color: $text-reverse;
+      font-weight: 600;
+      &:hover {
+        color: $text-color
+      }
+    }
+
+    .nav-item.active {
+      .nav-link {
+        color: $text-color;
+      }
+      position: relative;
+      @include mq(phablet, min) {
+        &:after {
+          @include pseudo();
+          background: $primary-color;
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          left: 50%;
+          bottom: -15px
+        }
+      }
+    }
+  }
+  .nav-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 2px solid $border-color;
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    top: 125%;
+    left: -25px;
+    color: $text-color;
+    background: $background-color;
+    padding: 0px;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, .5);
+    &::before {
+      @include css-triangle($border-color, up);
+      left: 50%;
+      top: -8px;
+      transform: translateX(-50%);
+    }
+    @include mq(phablet,max){
+      &{
+        position: absolute;
+      }
+    }
+    .dropdown-item {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      color: $text-color;
+      cursor: pointer;
+      text-align: center;
+      overflow: hidden;
+      &:not(:last-child) {
+        border-bottom: 1px solid $border-color;
+      }
+    }
+    .dropdown-item:focus,
+    .dropdown-item:hover {
+      color: $text-color;
+      background: lighten($background-color, 20) !important
+    }
+  }
+}
