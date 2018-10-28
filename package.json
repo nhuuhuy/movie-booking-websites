@@ -1,10 +1,8 @@
 {
   "name": "app-booking-movie",
   "version": "0.0.0",
-  "homepage": "https://nhuuhuy.github.io/movie-booking-websites",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy": "gh-pages -d dist/app-booking-movie",
+
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
