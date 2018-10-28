@@ -13,7 +13,7 @@ import { Router } from '../../../../node_modules/@angular/router';
   styleUrls: ['./add-movie.component.scss']
 })
 export class AddMovieComponent implements OnInit {
-  private movie: Movie = new Movie;
+   movie: Movie = new Movie;
   constructor(
     private movieService: MoviesService,
     private store: Store<fromStore.AdminState>,

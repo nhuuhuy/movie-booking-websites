@@ -11,15 +11,13 @@ import { Observable } from '../../../../node_modules/rxjs';
   styleUrls: ['../../../assets/styles/home-layout.scss']
 })
 export class LayoutComponent implements OnInit, AfterViewInit {
-  private loadingMovies: Observable<boolean>;
-  private loadingNews: Observable<boolean>;
-  private loadingMovie: Observable<boolean>;
+   user;
   constructor(private store: Store<fromStore.HomeState>) {}
 
   ngOnInit() {
     if (localStorage.getItem('userLogin')) {
-      const user: User = JSON.parse(localStorage.getItem('userLogin'));
-      this.store.dispatch(new fromStore.Login(user));
+      this.user = JSON.parse(localStorage.getItem('userLogin'));
+      this.store.dispatch(new fromStore.Login(this.user));
     }
   }
   ngAfterViewInit() {

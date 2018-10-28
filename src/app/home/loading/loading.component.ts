@@ -10,9 +10,9 @@ import { Observable } from '../../../../node_modules/rxjs';
 })
 export class LoadingComponent implements OnInit {
   loading = false;
-  private loadingMovies: Observable<boolean>;
-  private loadingNews: Observable<boolean>;
-  private loadingMovie: Observable<boolean>;
+   loadingMovies: Observable<boolean>;
+   loadingNews: Observable<boolean>;
+   loadingMovie: Observable<boolean>;
   constructor(private store: Store<fromStore.HomeState>) { }
 
   ngOnInit() {

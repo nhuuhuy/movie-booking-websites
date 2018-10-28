@@ -3,14 +3,14 @@
   <div class="container-fluid">
       <h2 class="heading  display-4"><span>Phim đang chiếu</span> </h2>
   </div>
-    <app-movies-slider  [MovieArray]="onPlayingMovie" (eventTrailer)="eventTrailer($event)"></app-movies-slider>
+    <app-movies-slider  [MovieArray]="onPlayingMovie" ></app-movies-slider>
 </section>
 <app-quick-booking [movies]="onPlayingMovie"></app-quick-booking>
 <section class="moviesComingSoon">
   <div class="container">
       <h2 class="heading  display-4"> <span>Phim sắp chiếu</span> </h2>
   </div>
-    <app-movies-slider  [MovieArray]="comingSoonMovie" (eventTrailer)="eventTrailer($event)"></app-movies-slider>
+    <app-movies-slider  [MovieArray]="comingSoonMovie" ></app-movies-slider>
 </section>
 
 <section class="news">

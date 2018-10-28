@@ -13,7 +13,7 @@ import * as fromStore from '../stores';
 })
 export class EditMovieComponent implements OnInit, OnDestroy {
   private id: string;
-  private movie: Movie;
+   movie: Movie;
   private subService: Subscription;
   private subParams: Subscription;
   private startDate: any;

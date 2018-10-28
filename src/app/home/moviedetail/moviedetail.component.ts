@@ -15,7 +15,7 @@ export class MoviedetailComponent implements OnInit, OnDestroy {
   private id: string;
   private isUserLogin: Observable<boolean>;
   private subParams: Subscription;
-  private movie: Movie = new Movie();
+  movie: Movie = new Movie();
   private circle: any = {
     strokeDasharray: 2 * Math.PI * 54,
     strokeDashoffset: 0

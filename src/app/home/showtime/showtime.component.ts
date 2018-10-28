@@ -24,7 +24,7 @@ export class ShowtimeComponent implements OnInit, OnDestroy {
   private checkoutDone = false;
 
   private trailerSrc;
-  private movie: Movie;
+   movie: Movie;
   private increase = 0;
   private showtime;
   private total = 0;

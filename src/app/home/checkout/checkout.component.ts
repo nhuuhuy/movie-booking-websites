@@ -24,14 +24,14 @@ export class CheckoutComponent implements OnInit, OnChanges {
   bookingSeats: Seat[];
   @Input()
   showTimeId;
-  private movie: Movie;
+   movie: Movie;
   @Input()
   user: User;
   @Output()
   checkoutSuccess = new EventEmitter();
-  private total = 0;
-  private showtime;
-  private checkoutDone = false;
+   total = 0;
+   showtime;
+   checkoutDone = false;
   constructor(
     private showtimeService: ShowtimeService,
     private store: Store<fromStore.HomeState>

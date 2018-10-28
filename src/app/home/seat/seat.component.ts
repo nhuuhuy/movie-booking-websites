@@ -9,7 +9,7 @@ import { Seat } from '../../models/seat';
 export class SeatComponent implements OnInit {
   @Input() seat: Seat;
  @Output() eventBook = new EventEmitter();
-  private isBooking: Boolean = false;
+   isBooking: Boolean = false;
   constructor() { }
 
   ngOnInit() {

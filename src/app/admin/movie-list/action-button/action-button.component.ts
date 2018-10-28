@@ -9,7 +9,7 @@ import { ViewCell } from '../../../../../node_modules/ng2-smart-table';
   styleUrls: ['./action-button.component.scss']
 })
 export class ActionButtonComponent implements ViewCell, OnInit {
-  private movie: Movie;
+   movie: Movie;
   @Input() value;
   @Input() rowData: Movie;
   constructor( private store: Store<fromStore.AdminState>) { }

@@ -10,7 +10,7 @@ import * as fromStore from '../stores';
 export class ModalTrailerComponent implements OnInit {
   @Input() trailer;
   @ViewChild('trailerVideo') trailerVideo: ElementRef;
-  private trailerSrc;
+   trailerSrc;
   constructor(private sanitizer: DomSanitizer, private store: Store<fromStore.HomeState>) { }
   closeTrailer() {
     this.store.dispatch({

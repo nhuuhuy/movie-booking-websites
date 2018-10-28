@@ -12,10 +12,10 @@ import { UserActionButtonComponent } from './user-action-button/user-action-butt
   styleUrls: ['./manage-user.component.scss']
 })
 export class ManageUserComponent implements OnInit {
-  private userList$: Observable<User[]>;
-  private subService: Subscription;
-  private selectedUser$: Observable<User>;
-  private  settings = {
+   userList$: Observable<User[]>;
+   subService: Subscription;
+   selectedUser$: Observable<User>;
+    settings = {
     columns: {
 
       TaiKhoan: {

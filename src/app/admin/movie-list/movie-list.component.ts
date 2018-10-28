@@ -12,8 +12,8 @@ import { ActionButtonComponent } from './action-button/action-button.component';
   providers: [DatePipe]
 })
 export class MovieListComponent implements OnInit {
-  private MovieList$: Observable<Movie[]>;
-  private  settings = {
+   MovieList$: Observable<Movie[]>;
+    settings = {
     columns: {
       HinhAnh: {
         title: 'STT',

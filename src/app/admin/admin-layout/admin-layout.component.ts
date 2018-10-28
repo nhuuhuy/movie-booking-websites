@@ -8,7 +8,7 @@ import { User } from '../../models/user';
   styleUrls: ['../../../assets/styles/admin.scss']
 })
 export class AdminLayoutComponent implements OnInit {
-  private toogled = false;
+   toogled = false;
   constructor(private store: Store<fromStore.AdminState>) { }
 
   ngOnInit() {

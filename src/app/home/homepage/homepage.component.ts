@@ -18,8 +18,8 @@ export class HomepageComponent implements OnInit {
     private movieService: MoviesService,
     private store: Store<fromStore.HomeState>
   ) {}
-  private onPlayingMovie: Array<Movie> = [];
-  private comingSoonMovie: Array<Movie> = [];
+   onPlayingMovie: Array<Movie> = [];
+   comingSoonMovie: Array<Movie> = [];
   ngOnInit() {
     const today = new Date('08/30/2018');
     this.store.dispatch(new fromStore.FetchMovies());

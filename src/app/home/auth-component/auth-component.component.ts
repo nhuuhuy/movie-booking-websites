@@ -11,7 +11,7 @@ import { User } from '../../models/user';
 export class AuthComponentComponent implements OnInit {
   @ViewChild('close') closeModal: ElementRef;
   private isUserLogin: Boolean = false;
-  private isSignUp: Boolean = false;
+   isSignUp: Boolean = false;
   constructor(private store: Store<fromStore.HomeState>) {}
   ngOnInit() {}
   signIn(user) {

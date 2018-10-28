@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class MoviesComponent implements OnInit {
   private urlHost: String = 'http://sv.myclass.vn/Images/Movies/';
-  private MovieList: Array<Movie>;
+  MovieList: Array<Movie>;
   private subService: Subscription;
   private trailer;
   constructor(private movieService: MoviesService) { }

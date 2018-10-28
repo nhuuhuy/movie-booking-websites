@@ -9,7 +9,7 @@ import { Observable } from '../../../../node_modules/rxjs';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  private searchArr: Observable<Movie[]>;
+   searchArr: Observable<Movie[]>;
   constructor(private store: Store<fromStore.HomeState>) {}
 
   ngOnInit() {}

@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['../../../assets/styles/news-list.scss']
 })
 export class NewsDetailComponent implements OnInit, OnDestroy {
-  private news;
+   news;
   private subParams: Subscription;
   private subService: Subscription;
   private id;

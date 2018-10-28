@@ -14,8 +14,7 @@ export class PiechartComponent implements OnInit {
   showLegend = true;
   showLabels = true;
   gradient =  true;
-  showXAxis = true;
-  showYAxis = true;
+
   view = [];
   colorScheme = {
     domain: [ '#9046dd', '#db1623', '#b3328d']

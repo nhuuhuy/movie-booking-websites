@@ -10,7 +10,7 @@ import * as fromStore from '../stores';
 })
 export class TopofficeComponent implements OnInit {
   private movie: Observable<Movie[]>;
-  private onPlayingMovie: Array<Movie> = [];
+   onPlayingMovie: Array<Movie> = [];
   constructor(private store: Store<fromStore.AdminState>) { }
 
   ngOnInit() {

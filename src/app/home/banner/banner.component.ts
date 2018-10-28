@@ -20,7 +20,7 @@ export class BannerComponent implements OnInit {
         'https://s3img.vcdn.vn/123phim/2018/08/dich-nhan-kiet-tu-dai-thien-vuong-15344942043678.jpg'
     }
   ];
-  private option = {
+   option = {
     items: 1,
     dots: true,
     nav: true,

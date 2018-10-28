@@ -10,8 +10,8 @@ import { Observable } from '../../../../node_modules/rxjs';
 })
 export class AdminHeaderComponent implements OnInit {
   @Output() toogle = new EventEmitter();
-  private toogled = false;
-  private user: Observable<User>;
+   toogled = false;
+   user: Observable<User>;
   constructor(private store: Store<fromStore.AdminState>) { }
 
   ngOnInit() {
@@ -24,5 +24,10 @@ export class AdminHeaderComponent implements OnInit {
   onToogleSidebar() {
     this.toogled = !this.toogled;
     this.toogle.emit(this.toogle);
+  }
+  logOut() {
+    localStorage.removeItem('userLogin');
+    this.store.dispatch(new fromStore.Logout());
+
   }
 }

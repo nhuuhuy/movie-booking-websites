@@ -10,7 +10,7 @@ import { User } from '../../models/user';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  private isUserLogin = false;
+   isUserLogin = false;
   private user: Observable<User>;
   private isAdmin = false;
   constructor(private store: Store<fromStore.HomeState>) { }

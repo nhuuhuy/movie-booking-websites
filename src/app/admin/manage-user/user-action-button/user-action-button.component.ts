@@ -9,7 +9,7 @@ import * as fromStore from '../../stores';
   styleUrls: ['./user-action-button.component.scss']
 })
 export class UserActionButtonComponent implements ViewCell, OnInit {
-  private user: User;
+   user: User;
   @Input() value;
   @Input() rowData: User;
   constructor(private store: Store<fromStore.AdminState>) { }

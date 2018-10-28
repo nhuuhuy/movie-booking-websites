@@ -11,11 +11,11 @@ import * as fromStore from '../stores';
 })
 export class QuickBookingComponent implements OnInit, OnDestroy {
   @Input() movies: Movie[];
-  private movie: Movie;
-  private showtime;
-  private isUserLogin: boolean;
-  private subService: Subscription;
-  private selectDone = false;
+   movie: Movie;
+   showtime;
+   isUserLogin: boolean;
+   subService: Subscription;
+   selectDone = false;
   constructor(private movieService: MoviesService, private store: Store<fromStore.HomeState>) { }
 
   ngOnInit() {

@@ -9,7 +9,7 @@ import { Observable } from '../../../../node_modules/rxjs';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-  private newsList;
+   newsList;
   constructor(private store: Store<fromStore.HomeState>) { }
 
   ngOnInit() {

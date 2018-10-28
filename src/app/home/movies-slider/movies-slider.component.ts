@@ -12,7 +12,7 @@ export class MoviesSliderComponent implements OnInit {
   @Input() MovieArray;
   @Output() eventTrailer = new EventEmitter();
   private trailer: string;
-  private loadingMovies: Observable<boolean>;
+   loadingMovies: Observable<boolean>;
   private owlArray = [];
   private owlOptions = {
     items: 5,

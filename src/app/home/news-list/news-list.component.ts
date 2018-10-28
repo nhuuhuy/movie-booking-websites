@@ -8,7 +8,7 @@ import { Subscription } from '../../../../node_modules/rxjs';
   styleUrls: ['../../../assets/styles/news-list.scss']
 })
 export class NewsListComponent implements OnInit, OnDestroy {
-  private newsList;
+   newsList;
   private page = {
     page: 1,
     perpage: 9

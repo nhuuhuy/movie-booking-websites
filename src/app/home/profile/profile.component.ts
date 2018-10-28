@@ -13,7 +13,7 @@ import swal from 'sweetalert2';
   providers: [DatePipe]
 })
 export class ProfileComponent implements OnInit {
-  private user: User;
+   user: User;
   private bookingHistory;
   private  settings = {
     columns: {

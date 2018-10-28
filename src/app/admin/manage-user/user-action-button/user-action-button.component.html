@@ -1,4 +1,4 @@
 <button class="btn "
 [swal]="{ title: 'Bạn có muốn xoá người dùng '+ user.HoTen , showCancelButton: true}" (confirm)="deleteUser(user.TaiKhoan)"
 ><i class="material-icons">delete_forever</i></button>
-<button class="btn " (click)="selectUser(user)"  data-toggle="modal" data-target="#modalUser"><i class="material-icons">mode_edit</i></button>
+<button class="btn " (click)="selectUser()"  data-toggle="modal" data-target="#modalUser"><i class="material-icons">mode_edit</i></button>
