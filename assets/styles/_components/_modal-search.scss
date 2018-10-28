@@ -1,0 +1,44 @@
+:host /deep/ .search{
+  .modal-dialog{
+    top:10%;
+
+  }
+  .modal-content{
+    position: relative;
+    background: $background-color;
+  }
+  .close{
+    position: absolute;
+    color: $text-color;
+    background: rgba($background-color, 0.7);
+    border: 1px solid $text-color;
+    padding: .5rem;
+    border-radius: 100%;
+    z-index: 10;
+    top: -20px;
+    right: -20px;
+    opacity: 1;
+  }
+
+  &__form{
+    position: relative;
+
+  }
+  &__label{
+    position: absolute;
+    top: 1rem;
+    color: $text-color;
+  }
+  &__input{
+    padding-left:2.5rem;
+
+  }
+  &__result{
+    .media{
+      img{
+        width: 50px;
+        height: 100%;
+      }
+    }
+  }
+}

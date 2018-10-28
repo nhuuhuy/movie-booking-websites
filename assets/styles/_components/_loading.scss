@@ -1,0 +1,112 @@
+:host /deep/ .loading {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: block;
+  position:absolute;
+   div {
+    position:absolute;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    width: 300px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: load 4s ease infinite alternate
+  }
+}
+
+@keyframes load {
+  0%,
+  8%,
+  48% {
+    background-image: none, none, none, none, none, none, none, none, none, none;
+    background-position: left center, 28px 72px, 62px 70px, 96px 72px, 127px center, 154px 110px, 183px 128px, 217px 130px, 251px 128px, right 110px
+  }
+  10%,
+  90% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none, none, none, none, none, none, none, none, none
+  }
+  12%,
+  88% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none, none, none, none, none, none, none, none
+  }
+  14%,
+  86% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none, none, none, none, none, none, none
+  }
+  16%,
+  84% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none, none, none, none, none, none
+  }
+  18%,
+  82% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none, none, none, none, none
+  }
+  20%,
+  80% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none, none, none, none
+  }
+  22%,
+  78% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none, none, none
+  }
+  24%,
+  76% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none, none
+  }
+  26%,
+  74% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), none
+  }
+  28%,
+  72% {
+    background-image: radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  30%,
+  70% {
+    background-image: none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  32%,
+  68% {
+    background-image: none, none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  34%,
+  66% {
+    background-image: none, none, none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  36%,
+  64% {
+    background-image: none, none, none, none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  38%,
+  62% {
+    background-image: none, none, none, none, none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  40%,
+  60% {
+    background-image: none, none, none, none, none, none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  42%,
+  58% {
+    background-image: none, none, none, none, none, none, none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  44%,
+  56% {
+    background-image: none, none, none, none, none, none, none, none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0)), radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  46%,
+  54% {
+    background-image: none, none, none, none, none, none, none, none, none, radial-gradient(closest-side at 50% 50%, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, #e60019, rgba(0, 0, 0, 0))
+  }
+  50%,
+  52%,
+  92%,
+  100% {
+    background-image: none, none, none, none, none, none, none, none, none, none;
+    background-position: left 110px, 28px 128px, 62px 130px, 96px 128px, 127px 110px, 154px center, 183px 72px, 217px 70px, 251px 72px, right center
+  }
+}
