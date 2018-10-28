@@ -1,0 +1,96 @@
+<main class="main-content" *ngIf="movie">
+  <div class="container" *ngIf="!checkoutDone">
+    <div class="row">
+      <div class="col-12 ">
+        <div class=" seats p-3 ">
+          <div class="seats__screen embed-responsive-21by9" [ngClass]="{'active': movie}">
+            <iframe class="embed-responsive-item" allowfullscreen [src]="trailerSrc"></iframe>
+          </div>
+          <div class="seats__wrapp" [ngClass]="{'active': movie}">
+            <div class="seats__type d-flex flex-wrap justify-content-between w-50 my-3">
+              <div class="d-flex align-items-center">
+              <div class="seats__item seas__booked bg-warning"></div>
+              <span class="text-secondary">Ghế đã đặt</span>
+              </div>
+              <div class="d-flex align-items-center">
+              <div class="seats__item seas__booking bg-danger"></div>
+              <span class="text-secondary">Ghế đang chọn</span>
+              </div>
+              <div class="d-flex align-items-center">
+              <div class="seats__item seas__notbook">
+              </div>
+              <span class="text-secondary">Ghế trống</span>
+              </div>
+            </div>
+            <ng-container *ngFor="let seat of seats, let i = index">
+
+              <div class=" seats__row px-4" *ngIf="i%10===0">
+                <!-- <div class="text-secondary">{{increaseString(i/10)}}</div> -->
+                <ng-container *ngFor="let seat of seats| slice: i : i+10">
+                  <app-seat *ngIf="!seat.DaDat" (eventBook)="selectSeat(seat,$event)" [seat]="seat"></app-seat>
+                  <button class="seats__item bg-warning m-2" disabled *ngIf="seat.DaDat">
+                    <span class="seats__item-num">{{seat.STT}}</span>
+                  </button>
+                </ng-container>
+              </div>
+            </ng-container>
+          </div>
+
+
+        </div>
+
+      </div>
+      <div class="col-lg-8 m-auto"  *ngIf="movie">
+        <div class=" mt-4">
+          <app-checkout [user]="user" [bookingSeats]="bookingSeats" [showTimeId]="id" (checkoutSuccess)="checkoutSuccess($event)"></app-checkout>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="checkoutDone">
+    <div class="row">
+      <div class="col-md-4 m-auto">
+        <div class="card ticket ">
+          <div class="ticket__image" [ngStyle]="{'background-image':'url('+movie.HinhAnh+')'}">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title ticket__movie">{{movie.TenPhim}}</h4>
+            <div class=" ticket__date ">
+              <span>Ngày</span>
+              <div class="d-flex justify-content-between">
+                <p>{{showtime.NgayChieuGioChieu| date: "dd/MM/yyyy"}}</p>
+                <p>{{showtime.NgayChieuGioChieu| date: 'hh:mm bbbb'}}</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between flex-wrap">
+              <div class=" ticket__theater">
+                <span>Rạp: </span>
+                <p>
+                  {{showtime.Rap.TenRap}}</p>
+              </div>
+              <div class="ticket__seats">
+                <span>Số vé:</span>
+                <p>{{bookingSeats.length}} </p>
+              </div>
+              <div class="ticket__seat-list">
+                <span>Ghế:</span>
+                <p>
+                  <ng-container *ngFor="let seat of bookingSeats, let i = index"> {{seat.TenGhe}}
+                    <ng-container *ngIf="i !== (bookingSeats.length - 1 )"> - </ng-container>
+                  </ng-container>
+                </p>
+              </div>
+            </div>
+            <div class="ticket__total">
+              <span>Tổng Tiền: </span>
+              <p>{{total| currency: "VNĐ"}}</p>
+            </div>
+          </div>
+          <div class="ticket__Qrcode">
+              <qrcode [qrdata]="ticketQr" [size]="150" [level]="'M'"></qrcode>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

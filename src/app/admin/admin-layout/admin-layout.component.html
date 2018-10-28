@@ -1,0 +1,13 @@
+<app-admin-header (toogle)="onToogleSidebar($event)"></app-admin-header>
+<div class="container-fluid">
+
+
+  <div class="float-left pl-0 pr-0 collapse width show" [ngClass]="toogled ? 'side-small': ''" id="sidebar">
+    <a name="" id="" class="btn btn-gradient__primary" routerLink="/admin" role="button"><i class="material-icons">home</i> <span>DASHBOARD</span></a>
+    <app-sidebar (click)="openSidebar()"></app-sidebar>
+  </div>
+  <main class="mr-auto  px-5 pl-md-2 pt-5 bg-transparent" [ngClass]="toogled ? 'admin-sm' : 'admin-lg'">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

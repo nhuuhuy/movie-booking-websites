@@ -1,0 +1,23 @@
+<app-banner></app-banner>
+<section class="movies">
+  <div class="container-fluid">
+      <h2 class="heading  display-4"><span>Phim đang chiếu</span> </h2>
+  </div>
+    <app-movies-slider  [MovieArray]="onPlayingMovie" (eventTrailer)="eventTrailer($event)"></app-movies-slider>
+</section>
+<app-quick-booking [movies]="onPlayingMovie"></app-quick-booking>
+<section class="moviesComingSoon">
+  <div class="container">
+      <h2 class="heading  display-4"> <span>Phim sắp chiếu</span> </h2>
+  </div>
+    <app-movies-slider  [MovieArray]="comingSoonMovie" (eventTrailer)="eventTrailer($event)"></app-movies-slider>
+</section>
+
+<section class="news">
+  <div class="container">
+      <h2 class="heading  display-4"> <span>Tin Tức </span>  </h2>
+  </div>
+  <app-news></app-news>
+</section>
+
+<app-modal-trailer ></app-modal-trailer>

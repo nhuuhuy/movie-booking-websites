@@ -1,0 +1,57 @@
+
+body{
+  overflow-x: hidden;
+  background:$background-color!important;
+}
+a,a:hover{
+  color: $text-color;
+  text-decoration: none!important;
+}
+.main-content{
+  margin-top: 6rem;
+  min-height: calc(100vh - 10rem)
+}
+
+.nav-tabs{
+  border: none;
+  .nav-link{
+    border:none;
+    border-radius: 0px;
+    &.active{
+      background-color:transparent;
+      border:none;
+    }
+  }
+}
+.form-group{
+  .text-danger{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: 1rem;
+    position: absolute;
+    z-index: 2;
+    font-size: 1rem;
+    right: 0;
+    top:15px;
+    i{
+      font-size: 1rem;
+      margin-left: 5px;
+    }
+  }
+}
+*:disabled{
+  cursor: not-allowed
+}
+.btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active{
+  background: inherit;
+}
+
+.swal2-popup .swal2-title{
+  font-family: 'Roboto'!important
+}
+
+.swal2-popup .swal2-styled.swal2-confirm{
+  background: $primary-color!important;
+  border-color: $primary-color!important;
+}

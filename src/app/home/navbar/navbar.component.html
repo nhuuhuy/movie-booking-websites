@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-sm navbar-light  fixed-top">
+  <a class="navbar-brand" routerLink="">
+    <img src="../../../assets/images/AMC_Logo.png" alt="">
+  </a>
+  <button class="navbar-toggler hidden-lg-up order-3 text-white" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <i class="material-icons">menu</i>
+  </button>
+  <div class="collapse navbar-collapse order-4 order-md-2" id="collapsibleNavId">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="">Trang Chủ</a>
+      </li>
+      <!-- <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        <a class="nav-link" routerLink="/phim">Phim</a>
+      </li> -->
+      <li class="nav-item " routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        <a class="nav-link" routerLink="/tin-tuc">Tin tức</a>
+      </li>
+
+
+    </ul>
+
+
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="material-icons">search</i></button>
+    </form> -->
+  </div>
+  <div class="navbar-nav ml-auto d-flex flex-row order-sm-5">
+      <button *ngIf="!isUserLogin" type="button" class="btn bg-transparent text-white btn-lg " data-toggle="modal" data-target="#modalAuth">
+          <i class="material-icons">account_circle</i>
+        </button>
+        <div *ngIf="isUserLogin" class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center" id="dropdownUser" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="true">
+            <img src="../../../assets/images/pic-1.png" alt="" class="nav-avatar">
+            <a class="text-white font-bold mx-3  d-none d-md-block" routerLink="/profile">{{(user|async).TaiKhoan}}</a>
+          </a>
+          <div class="dropdown-menu " aria-labelledby="dropdownUser" >
+            <a class="dropdown-item " routerLink="/profile">Profile</a>
+            <a class="dropdown-item "  (click)=" logOut()">Logout</a>
+            <a class="dropdown-item " *ngIf="isAdmin" routerLink="/admin" >DashBoard</a>
+          </div>
+        </div>
+        <button class="btn bg-transparent text-white btn-lg" type="submit" data-toggle="modal" data-target="#modalSearch">
+          <i class="material-icons">search</i>
+        </button>
+  </div>
+
+</nav>

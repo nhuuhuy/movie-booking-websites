@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+// 1. Configuration and helpers
+@import '_utils/variables',
+'_utils/functions',
+'_utils/mixins',
+'_utils/placeholders';
+// 2. Vendors
+// @import '_vendors/*';
+// 3. Base stuff
+@import '_base/reset',
+'_base/base',
+'_base/typography',
+'_base/_common.scss';
+// 4. Layout-related sections
+// @import '_layout/*';
+// 5. Components
+@import '_components/buttons';
+// 1. Configuration and helpers
+@import '_utils/variables',
+'_utils/functions',
+'_utils/mixins',
+'_utils/placeholders';
+// 2. Vendors
+// @import '_vendors/*';
+// 3. Base stuff
+@import '_base/reset',
+'_base/base',
+'_base/typography',
+'_base/_common.scss';
+// 4. Layout-related sections
+// @import '_layout/*';
+// 5. Components
+@import '_components/buttons', '_components/heading', '_components/form';
+// 6. Page-specific styles
+// @import '_pages/*';
+// 7. Themes
+// @import '_themes/*';
+// @import '_pages/_contact'
+

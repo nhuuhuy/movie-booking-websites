@@ -1,0 +1,30 @@
+<div class="card movie__card   m-auto   mt-2">
+    <div class="movie__card-img">
+      <img class="card-img-top img-fluid" [src]="movie.HinhAnh" alt="">
+      <div class="movie__card-overlay">
+          <button class="btn btn-trailer" data-toggle="modal" data-target="#modalTrailer" (click)="openTrailer(movie.Trailer)">
+            <i class="material-icons md-48">play_circle_outline</i>
+          </button>
+        </div>
+    </div>
+    <div class="movie__card-body d-flex flex-column">
+      <div class="movie__card-content mt-4">
+        <a [routerLink]="['/phim',movie.TenPhim]" [queryParams]="{id:movie.MaPhim}">
+          <h5 class="movie__card-title">{{ (movie.TenPhim.length>25)? (movie.TenPhim | slice:0:25)+'..':(movie.TenPhim)}}</h5>
+        </a>
+        <div class="d-flex justify-content-between">
+          <p>{{movie.NgayKhoiChieu | date: 'dd/MM'}}</p>
+          <p class="movie__card-rate  d-flex align-items-center">
+            <i class="material-icons md-16 ">star</i>
+            <span>
+              {{movie.DanhGia}}
+            </span>
+          </p>
+        </div>
+      </div>
+      <a [routerLink]="['/phim',movie.TenPhim|slug]" [queryParams]="{id:movie.MaPhim}" class="mt-4 btn btn-rounded btn-red btn-booking"> Đặt vé</a>
+    </div>
+
+  </div>
+
+

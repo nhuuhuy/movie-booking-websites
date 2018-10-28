@@ -1,0 +1,34 @@
+<div class="container checkout" *ngIf="showtime">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="media flex-wrap flex-column flex-md-row justify-content-between" >
+        <div class="checkout-image" >
+          <img [src]="movie.HinhAnh" alt="" class="img-fluid">
+        </div>
+        <div class="media-body px-md-5 w-100 checkout-info  h-100">
+          <h3 class="oswald mb-2">{{movie.TenPhim}}</h3>
+          <p>{{showtime.NgayChieuGioChieu| date: "dd/MM/yyyy"}}</p>
+          <p><strong>Rạp: </strong>{{showtime.Rap.TenRap}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="checkout-ticket d-flex flex-column justify-content-between h-100">
+        <p>
+          <strong>Số vé:</strong> {{bookingSeats.length}} </p>
+        <p>
+          <strong>Ghế:</strong>
+          <ng-container *ngFor="let seat of bookingSeats, let i = index"> {{seat.TenGhe}} <span *ngIf="i !== (bookingSeats.length - 1 )"> - </span> </ng-container>
+        </p>
+        <p>
+          <strong>Tổng Tiền: </strong>{{total| currency: "VNĐ"}}
+        </p>
+        <button class="btn btn-danger mt-3" [disabled]=!bookingSeats.length (click)="checkout()">Đặt vé</button>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

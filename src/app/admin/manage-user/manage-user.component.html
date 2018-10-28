@@ -1,0 +1,15 @@
+<div class="card card-table">
+  <div class="card-header">
+    Quản Lý Người Dùng
+  </div>
+  <div class="card-body">
+    <button type="button" class="btn btn-rounded d-flex align-item-center btn-secondary mb-2 btn-lg" data-toggle="modal" (click)="addUser()" data-target="#modalUser"  >
+      <i class="material-icons">add</i>
+    </button>
+    <ng2-smart-table [settings]="settings" [source]="userList$|async"></ng2-smart-table>
+
+  </div>
+
+</div>
+
+<app-modal-user [user]="selectedUser$"></app-modal-user>

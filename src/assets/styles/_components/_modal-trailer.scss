@@ -1,0 +1,21 @@
+:host /deep/ .home-modal{
+  .modal-dialog{
+    top:50%;
+    transform: translateY(-50%);
+  }
+  .modal-content{
+    position: relative;
+  }
+  .close{
+    position: absolute;
+    color: $text-color;
+    background: rgba($background-color, 0.7);
+    border: 1px solid $text-color;
+    padding: .5rem;
+    border-radius: 100%;
+    z-index: 10;
+    top: -20px;
+    right: -20px;
+    opacity: 1;
+  }
+}

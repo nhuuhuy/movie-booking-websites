@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 movie-slider" *ngIf="loadingMovies">
+      <owl-carousel *ngIf="MovieArray.length > 0" [options]="owlOptions"
+        [carouselClasses]="['owl-theme', 'row', 'sliding']">
+        <ng-container *ngFor="let movie of MovieArray">
+          <app-movie-card [movie]="movie">
+          </app-movie-card>
+        </ng-container>
+      </owl-carousel>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="card card-graph">
+  <div class="card-header">
+    Doanh Thu Tháng
+  </div>
+  <div class="card-body">
+      <!-- <ngx-charts-pie-chart [scheme]="colorScheme" [gradient]="gradient" [results]="results" [legend]="showLegend" [labels]="showLabels"   >
+        </ngx-charts-pie-chart> -->
+        <ngx-charts-bar-vertical
+        [scheme]="colorScheme"
+        [results]="results"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        [legend]="showLegend"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel">
+      </ngx-charts-bar-vertical>
+  </div>
+
+</div>

@@ -1,0 +1,112 @@
+<div class="container main-content profile" *ngIf="user">
+  <div class="row">
+    <div class="col-sm-3">
+      <!--left col-->
+
+      <div class="text-center">
+        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar rounded-circle img-thumbnail" alt="avatar">
+        <h4 class="oswald mt-3 text-white">{{user.TaiKhoan}}</h4>
+      </div>
+
+    </div>
+    <!--/col-3-->
+    <div class="col-sm-9">
+      <ul class="nav nav-tabs profile-tab">
+        <li>
+          <a data-toggle="tab" class="nav-link active" href="#home">Home</a>
+        </li>
+        <li>
+          <a data-toggle="tab" class="nav-link" (click)="getBookingHistory(user.TaiKhoan) " href="#messages">Lịch sử đặt vé</a>
+        </li>
+
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="home">
+          <form autocomplete=”off” #fUser='ngForm' (ngSubmit)=" update(fUser.value)">
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="text" autocomplete="off" autofill="off" name="TaiKhoan" [ngModel]="user.TaiKhoan" #TaiKhoan='ngModel' id="TaiKhoan"
+                    class="form-control input-sm" placeholder="Tai khoan" [disabled]="user.TaiKhoan">
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="text" required  pattern="[a-zA-Z ]*" autocomplete="off" name="HoTen" [ngModel]="user.HoTen" #HoTen='ngModel' id="HoTen" class="form-control input-sm"
+                    placeholder="Họ tên">
+                    <ng-container *ngIf="HoTen.errors && (HoTen.dirty || HoTen.touched)">
+                        <span class="text-danger" *ngIf="HoTen.errors.required">
+                           <i class="material-icons">error_outline</i> Bạn chưa nhập họ tên!
+                        </span>
+                        <span class="text-danger" *ngIf="HoTen.errors.pattern">
+                           <i class="material-icons">error_outline</i>  Vui lòng nhập ký tự!
+                        </span>
+                      </ng-container>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input required type="email" autocomplete="off" name="Email" id="Email" #Email="ngModel" [ngModel]="user.Email" class="form-control input-sm"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                placeholder="Email Address">
+                <ng-container *ngIf="Email.errors && (Email.dirty || Email.touched)">
+                    <span class="text-danger" *ngIf="Email.errors.required">
+                       <i class="material-icons">error_outline</i> Bạn chưa nhập email!
+                    </span>
+                    <span class="text-danger" *ngIf="Email.errors.pattern">
+                       <i class="material-icons">error_outline</i> Email không đúng định dạng!
+                    </span>
+                  </ng-container>
+            </div>
+
+            <div class="form-group">
+              <input type="text" required pattern="[0-9]*" name="SoDT" autocomplete="off" id="SoDT" #SoDT="ngModel" placeholder="Số điện thoại" [ngModel]="user.SoDT"
+                class="form-control input-sm">
+                <ng-container *ngIf="SoDT.errors && (SoDT.dirty || SoDT.touched)">
+                    <span class="text-danger" *ngIf="SoDT.errors.required">
+                       <i class="material-icons">error_outline</i> Bạn chưa nhập số điện thoại!
+                    </span>
+                    <span class="text-danger" *ngIf="SoDT.errors.pattern">
+                       <i class="material-icons">error_outline</i> Vui lòng nhập đúng số điện thoại!
+                    </span>
+                  </ng-container>
+            </div>
+            <div class="row">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                  <input type="password" minlength="6" required autocomplete="off" autocomplete="new-password" name="MatKhau" [ngModel]="user.MatKhau" #MatKhau="ngModel"
+                    id="MatKhau" class="form-control input-sm" placeholder="Password">
+                    <ng-container *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)">
+                        <span class="text-danger" *ngIf="MatKhau.errors.required">
+                           <i class="material-icons">error_outline</i> Bạn chưa nhập mật khẩu!
+                        </span>
+                        <span class="text-danger" *ngIf="MatKhau.errors.minlength">
+                           <i class="material-icons">error_outline</i> Độ dài mật khẩu tối thiểu 6 ký tự!
+                        </span>
+                      </ng-container>
+                </div>
+              </div>
+            </div>
+            <input type="submit"  [disabled]="fUser.invalid"  value="Cập Nhật" class="btn btn-rounded btn__primary">
+          </form>
+
+          <hr>
+
+        </div>
+        <!--/tab-pane-->
+        <div class="tab-pane" id="messages">
+          <ng-container *ngIf="bookingHistory">
+            <div class="card-table mt-3">
+              <ng2-smart-table [settings]="settings" [source]="bookingHistory"></ng2-smart-table>
+            </div>
+          </ng-container>
+        </div>
+
+      </div>
+      <!--/tab-pane-->
+    </div>
+    <!--/tab-content-->
+
+  </div>
+  <!--/col-9-->
+</div>
+<!--/row-->

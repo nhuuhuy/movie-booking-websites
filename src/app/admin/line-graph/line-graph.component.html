@@ -1,0 +1,18 @@
+<div class="card card-graph">
+  <div class="card-header">
+    Doanh Thu Tuần
+  </div>
+  <div class="card-body">
+    <ngx-charts-line-chart [scheme]="colorScheme" [results]="multi" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+      showGridLines="showGridLines" [autoScale]="autoScale" [curve]="curve" [gradient]="useGradient" [activeEntries]="highlights"
+      (deactivate) = "onActivateAndDeactivate($event)" (active) = "onActivateAndDeactivate()">
+  </ngx-charts-line-chart>
+
+  </div>
+
+  <!-- <ngx-charts-area-chart [scheme]="colorScheme" [results]="multi" [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend"
+    [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+    [autoScale]="autoScale" [gradient]="useGradient" [view]="view">
+  </ngx-charts-area-chart> -->
+</div>

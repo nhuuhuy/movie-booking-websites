@@ -1,0 +1,50 @@
+::ng-deep .banner{
+  .owl-dots {
+    margin-top: -5rem;
+    z-index: 20;
+    position: relative;
+  }
+  .owl-theme .owl-dots .owl-dot span{
+    background: #ffffff;
+  }
+  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #db1623;
+  }
+  .item{
+    max-height: 500px;
+    overflow: hidden;
+    img{
+      height: 100%;
+    }
+  }
+  .owl-item {
+    width: 100%;
+  }
+  .owl-nav {
+    position: absolute;
+    top: 50%;
+    color: #ffffff;
+    width: 100%;
+    .owl-prev, .owl-next{
+      position: absolute;
+      background: rgba(20, 20, 23, 0.7)!important;
+      transform: translateY(-50%);
+      border-radius: 50%!important;
+      i{
+        font-size: 6rem;
+        &:hover{
+          color:#db1623;
+        }
+      }
+
+    }
+    .owl-prev{
+      left: 10px;
+
+    }
+    .owl-next{
+      right: 10px;
+    }
+  }
+
+}

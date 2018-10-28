@@ -1,0 +1,130 @@
+<main class="main-content" *ngIf="movie ">
+  <div class="overlay">
+    <div class="overlay-image" [ngStyle]="{'background':'url('+ movie.HinhAnh+') top center no-repeat / cover'}">
+    </div>
+    <div class="overlay-gradient">
+    </div>
+  </div>
+  <section class="movie">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 m-auto">
+          <div class="page">
+            <!-- <div class="breadcrumbs">
+                        <a href="index.html">Home</a>
+                        <a href="review.html">Movie Review</a>
+                        <span>{{movie.TenPhim}}</span>
+                      </div> -->
+
+            <div class="content" *ngIf="movie">
+              <div class="row">
+                <div class="col-lg-4">
+                  <figure class="movie-poster text-center">
+                    <img [src]="movie.HinhAnh" class="img-fluid" alt="#">
+                  </figure>
+                </div>
+                <div class="col-lg-5 mt-4 d-flex text-center text-lg-left flex-column justify-content-center text-white">
+                  <p class="movie-releaseDay "> {{movie.NgayKhoiChieu | date: 'dd.MM.yyyy'}}</p>
+                  <h2 class="movie-title">{{movie.TenPhim }}</h2>
+
+                </div>
+                <div class="col-lg-3 mt-4 d-flex flex-column justify-content-center align-items-center text-white">
+                  <svg width="120" height="120" viewBox="0 0 120 120" class="d-none d-lg-block" style="transform: rotate(-90deg)">
+                    <defs>
+
+                      <linearGradient id="gradient" x1="150%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stop-color="#9046dd" />
+                        <stop offset="100%" stop-color="#dc1824" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#312150" stroke-width="12" />
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="url(#gradient)"  stroke-linecap="round" stroke-width="12" [attr.stroke-dasharray]="circle.strokeDasharray"
+                      [attr.stroke-dashoffset]="circle.strokeDashoffset" />
+                    <text x="50%" y="50%" fill="#fff"  alignment-baseline="middle" text-anchor="middle" font-size="18" font-family="Oswald" style="transform: rotate(90deg);transform-origin: 50%;">{{movie.DanhGia/5 * 100}}%</text>
+                  </svg>
+
+                  <div class="star-rating mt-3">
+                    <span  class='d-flex justify-content-center align-items-center flex-column'>
+                        <bar-rating [(rate)]="movie.DanhGia" [theme]="'fontawesome'" [readOnly]='true' [max]="5"></bar-rating>
+                      <strong class="rating ml-3">{{movie.DanhGia}} / 5</strong> </span>
+                  </div>
+                </div>
+              </div>
+              <!-- .row -->
+              <div class="movie-tab card  ">
+                <div class="card-header m-auto">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#booking-date" role="tab" aria-controls="home" aria-selected="true">Lịch Chiếu</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#info" role="tab" aria-selected="false">Thông Tin</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#commnet" role="tab" aria-selected="false">Đánh giá</a>
+                    </li> -->
+                  </ul>
+                </div>
+                <div class="card-body tab-content ">
+                  <div class="tab-pane fade show active" id="booking-date" role="tabpanel" aria-labelledby="home-tab" >
+                    <ng-container *ngIf="movie.LichChieu.length > 0, else noShowtime">
+                        <ul class="d-flex flex-wrap justify-content-md-between ">
+                            <li class="booking-date" *ngFor="let date of movie.LichChieu">
+                              <a name="" class="day" [ngClass]="{'active': currentShowtimes === date}" role="button" (click)="changeBookingDate(date)">
+                                <span>{{date.NgayChieuGioChieu | date : 'MM'}}</span>
+                                <em>{{date.NgayChieuGioChieu | date : 'EE'}}</em>
+                                <strong>{{date.NgayChieuGioChieu | date : 'dd'}}</strong>
+                              </a>
+                            </li>
+                          </ul>
+                          <div class="movie-showtimes">
+                            <h5 class="cinema">
+                              {{currentShowtimes.Rap.TenRap}}
+                            </h5>
+                            <ul class="showtime">
+
+                              <li class="item">
+
+                                <ng-container *ngIf="isUserLogin|async, else buttonLogin" >
+                                    <a [routerLink]="['/checkout']" [queryParams]="{id:currentShowtimes.MaLichChieu, movie: movie.MaPhim}">
+                                      <span>{{currentShowtimes.NgayChieuGioChieu | date: 'hh:mm bbbb'}}</span>
+                                      <br>
+                                      <span>{{currentShowtimes.Rap.SoGhe}} Ghế</span>
+                                    </a>
+                                </ng-container>
+                                <ng-template #buttonLogin >
+                                    <a data-toggle="modal" data-target="#modalAuth" style="cursor: pointer;">
+                                      <span>{{currentShowtimes.NgayChieuGioChieu | date: 'hh:mm bbbb'}}</span>
+                                      <br>
+                                      <span>{{currentShowtimes.Rap.SoGhe}} Ghế</span>
+                                    </a>
+                                </ng-template>
+                              </li>
+                            </ul>
+                          </div>
+                    </ng-container>
+                    <ng-template #noShowtime>
+                      <h5 class="text-dark">Lịch Chiếu Đang Cập Nhật</h5>
+                    </ng-template>
+                  </div>
+                  <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="entry-content">
+                      <p>
+                        <strong>Nội dung:</strong>
+                      </p>
+                      <div [innerHTML]="movie.MoTa">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- .container -->
+</main>

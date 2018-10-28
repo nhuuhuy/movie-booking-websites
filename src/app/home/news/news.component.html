@@ -1,0 +1,42 @@
+<div class="container news-blog" *ngIf="newsList">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          <ng-container *ngFor="let news of newsList| slice: 0: 1 ">
+
+            <a [routerLink]="['/tin-tuc',news.slug]" [queryParams]="{id:news.id}">
+              <div class="thumbnail principal-post">
+                <img [src]="news._embedded['wp:featuredmedia']['0'].source_url" class="img-fluid">
+                <div class="caption ">
+                  <h3 [innerHTML]="news.title.rendered"></h3>
+                  <!-- <span class="date-of-post">4 de dezembro de 2017</span> -->
+                  <p class="my-3">{{news.excerpt.rendered | slice: 3: 200}}</p>
+                </div>
+              </div>
+            </a>
+          </ng-container>
+
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail" *ngFor="let news of newsList| slice: 1">
+            <div class="media mb-3">
+              <div class="d-flex" style=" width: 100px;height: 65px;overflow: hidden">
+                <img [src]="news._embedded['wp:featuredmedia']['0'].media_details.sizes.medium.source_url" class="img-fluid">
+              </div>
+              <div class="media-body mx-3">
+                <h5>
+                  <a [routerLink]="['/tin-tuc',news.slug]" [queryParams]="{id:news.id}" [innerHTML]="news.title.rendered"></a>
+                </h5>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">
+    <img src="../../../assets/images/AMC_Logo.png" alt="">
+  </a>
+  <a href="#" class="btn btn-danger" data-target="#sidebar" (click)="onToogleSidebar()"data-toggle="collapse">
+    <i class="material-icons">menu</i>
+  </a>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="ml-auto">
+      <li class="nav-item dropdown">
+            <div class="dropdown">
+              <a class="dropdown-toggle d-flex align-items-center" id="dropdownUser" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="true">
+                <img src="../../../assets/images/pic-1.png" alt="" class="nav-avatar">
+                <a class="text-white font-bold mx-3 d-none d-md-block" routerLink="/profile">{{(user|async).TaiKhoan}}</a>
+              </a>
+              <div class="dropdown-menu " aria-labelledby="dropdownUser" >
+                <a class="dropdown-item " routerLink="/profile">Profile</a>
+                <a class="dropdown-item "  (click)=" logOut()">Logout</a>
+                <a class="dropdown-item " routerLink="/admin" >DashBoard</a>
+              </div>
+            </div>
+      </li>
+    </ul>
+
+  </div>
+</nav>

@@ -1,0 +1,152 @@
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade auth-modal" id="modalAuth" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content bg-transparent">
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12m-auto ">
+              <div class="auth-modal__left d-flex flex-column justify-content-center align-items-center" [ngClass]="{'open': isSignUp}">
+
+                <h4 class="text-uppercase text-center" [ngClass]="{'text-white': isSignUp}">{{ isSignUp? 'Đăng Ký' : 'Đăng Nhập'}}</h4>
+                <div [ngClass]="{'active': !isSignUp}">
+                  <form role="form" #fSignIn='ngForm' (ngSubmit)="signIn(fSignIn.value)" *ngIf='!isSignUp; else signUpForm'>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input type="text" required name="TaiKhoan" #TaiKhoan="ngModel" ngModel class="form-control input-sm" placeholder="Tài Khoản ">
+                          <ng-container *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)">
+                            <span class="text-danger" *ngIf="TaiKhoan.errors.required">
+                              <i class="material-icons">error_outline</i> Bạn chưa điền tài khoản đăng nhập!
+                            </span>
+                          </ng-container>
+
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input type="password" required name="MatKhau" ngModel #MatKhau="ngModel" class="form-control input-sm" placeholder="Mật Khẩu">
+                          <ng-container *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)">
+                            <span class="text-danger" *ngIf="MatKhau.errors.required">
+                              <i class="material-icons">error_outline</i> Bạn chưa nhập tài khoản!
+                            </span>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" [disabled]="fSignIn.invalid" class="btn btn-rounded btn-gradient__primary m-auto d-block">Đăng Nhập</button>
+                    <button type="button" class="d-none" #close data-dismiss="modal">Close</button>
+                  </form>
+                </div>
+
+                <div class="switch-wrapper" [ngClass]="{'open': isSignUp}" (click)="toogleForm()">
+                  <!-- <small>Đăng ký</small>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label> -->
+                  <i class="material-icons">mode_edit</i>
+                  <i class="material-icons">keyboard_arrow_right</i>
+                </div>
+
+                <ng-template #signUpForm>
+                  <form role="form" #fSignUp='ngForm' (ngSubmit)="signUp(fSignUp.value)" [ngClass]="{'active': isSignUp}">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input type="text" required minlength="6" name="TaiKhoan" ngModel #TaiKhoanDK='ngModel' class="form-control input-sm" placeholder="Tài khoản">
+                          <ng-container *ngIf="TaiKhoanDK.errors && (TaiKhoanDK.dirty || TaiKhoanDK.touched)">
+                            <span class="text-danger" *ngIf="TaiKhoanDK.errors.required">
+                              <i class="material-icons">error_outline</i> Bạn chưa điền tài khoản đăng nhập!
+                            </span>
+                            <span class="text-danger" *ngIf="TaiKhoanDK.errors.minlength">
+                              <i class="material-icons">error_outline</i> Tài khoản tối thiểu 6 ký tự
+                            </span>
+                          </ng-container>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input type="text" required pattern="[a-zA-Z ]*" name="HoTen" ngModel #HoTen='ngModel' class="form-control input-sm" placeholder="Họ tên">
+                          <ng-container *ngIf="HoTen.errors && (HoTen.dirty || HoTen.touched)">
+                            <span class="text-danger" *ngIf="HoTen.errors.required">
+                              <i class="material-icons">error_outline</i> Bạn chưa nhập họ tên!
+                            </span>
+                            <span class="text-danger" *ngIf="HoTen.errors.pattern">
+                              <i class="material-icons">error_outline</i> Vui lòng nhập ký tự!
+                            </span>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="email" required name="Email" id="Email" #Email="ngModel" ngModel class="form-control input-sm" placeholder="Email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                      <ng-container *ngIf="Email.errors && (Email.dirty || Email.touched)">
+                        <span class="text-danger" *ngIf="Email.errors.required">
+                          <i class="material-icons">error_outline</i> Bạn chưa nhập email!
+                        </span>
+                        <span class="text-danger" *ngIf="Email.errors.pattern">
+                          <i class="material-icons">error_outline</i> Email không đúng định dạng!
+                        </span>
+                      </ng-container>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" required pattern="[0-9]*" name="SoDT" placeholder="Số điện thoại" #SoDT="ngModel" ngModel class="form-control input-sm">
+                      <ng-container *ngIf="SoDT.errors && (SoDT.dirty || SoDT.touched)">
+                        <span class="text-danger" *ngIf="SoDT.errors.required">
+                          <i class="material-icons">error_outline</i> Bạn chưa nhập số điện thoại!
+                        </span>
+                        <span class="text-danger" *ngIf="SoDT.errors.pattern">
+                          <i class="material-icons">error_outline</i> Vui lòng nhập đúng số điện thoại!
+                        </span>
+                      </ng-container>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input type="password" minlength="6" required name="MatKhau" ngModel #MatKhauDK="ngModel" class="form-control input-sm" placeholder="Password">
+                          <ng-container *ngIf="MatKhauDK.errors && (MatKhauDK.dirty || MatKhauDK.touched)">
+                            <span class="text-danger" *ngIf="MatKhauDK.errors.required">
+                              <i class="material-icons">error_outline</i> Bạn chưa nhập mật khẩu!
+                            </span>
+                            <span class="text-danger" *ngIf="MatKhauDK.errors.minlength">
+                              <i class="material-icons">error_outline</i> Độ dài mật khẩu tối thiểu 6 ký tự!
+                            </span>
+                          </ng-container>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-group">
+                          <input type="password"  name="password_confirmation" class="form-control input-sm" placeholder="Nhập lại mật khẩu"
+                            #repassword="ngModel" ngModel>
+
+                          <ng-container *ngIf="repassword.value|| repassword.dirty || repassword.touched">
+                            <span class="text-danger" *ngIf="repassword.value !== MatKhauDK.value">
+                              <i class="material-icons">error_outline</i> Mật khẩu xác nhận không đúng!
+                            </span>
+                          </ng-container>
+                        </div>
+                      </div>
+                    </div>
+                    <input type="submit" [disabled]="fSignUp.invalid" value="Đăng Ký" class="btn btn-rounded btn-gradient__primary m-auto d-block ">
+                  </form>
+                </ng-template>
+              </div>
+            </div>
+            <!-- <div class="col-md-12d-md-block d-none">
+              <div class="auth-modal__right">
+                <button (click)="toogleForm()" class="btn  btn-outline-danger btn-rounded m-auto d-block">{{!isSignUp? 'Đăng Ký' : 'Đăng Nhập'}}</button>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

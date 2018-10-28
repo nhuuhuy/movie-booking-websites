@@ -1,0 +1,40 @@
+html {
+    font-size: 10px;
+    font-family: Roboto!important;
+
+    @include mq(tablet-small,max){
+      font-size: 7px;
+    }
+}
+
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 36px;
+
+}
+
+h2 {
+    font-size: 30px;
+    font-family: Oswald!important;
+
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6,
+p {
+    font-size: 16px;
+}

@@ -1,0 +1,13 @@
+<div class="banner">
+    <owl-carousel
+    [options]=option
+
+    [carouselClasses]="['owl-theme', 'sliding']">
+    <!-- <div class="item" *ngFor="let image of images;let i = index" style="height:calc(100vh - 5rem);" [ngStyle]="{'background':'url('+image.src+') top center no-repeat / cover'}"> -->
+        <!-- <div class="thumbnail-image" [ngStyle]="{'background': 'url(abc.jpg) no-repeat scroll center center / 80px 80px'}"></div> -->
+        <div class="item" *ngFor="let image of images;let i = index">
+        <img [src]="image.src" class="img-fluid">
+    </div>
+</owl-carousel>
+</div>
+

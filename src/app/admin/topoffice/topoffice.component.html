@@ -1,0 +1,17 @@
+
+<div class="card card-table mt-5 p-3">
+    <h2>Top box office</h2>
+    <ul class="list-unstyled" *ngIf="onPlayingMovie">
+      <ng-container *ngFor="let movie of onPlayingMovie, let i = index">
+          <li class="media my-3" *ngIf="i < 5">
+              <a class="d-block mr-3" href="#">
+                <img [src]="movie.HinhAnh" alt="" class="img-fluid">
+              </a>
+              <div class="media-body">
+                <h5>{{movie.TenPhim}}</h5>
+              </div>
+            </li>
+      </ng-container>
+      </ul>
+</div>
+

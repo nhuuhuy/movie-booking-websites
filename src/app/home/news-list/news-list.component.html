@@ -1,0 +1,64 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('http://35mm.vn/wp-content/uploads/2016/12/all-movies-banner.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h1>Góc Nhìn Điện Ảnh</h1>
+          <span class="subheading">Kết Nối Tình Yêu Với Điện Ảnh</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 mx-auto" *ngIf="newsList" id="newsList">
+      <ng-masonry-grid [masonryOptions]="{ transitionDuration: '0.8s',gutter:20, isFitWidth: true}" [useAnimation]="true" [useImagesLoaded]="false">
+        <!-- Masonry Grid Item -->
+        <ng-masonry-grid-item id="{{'masonry-item-'+i}}" *ngFor="let news of newsList ;  let i = index; ">
+          <!-- Grid Content  -->
+          <div class="post-preview">
+            <a [routerLink]="['/tin-tuc',news.slug]" [queryParams]="{id:news.id}">
+              <div class="post-img">
+                <img [src]="news._embedded['wp:featuredmedia']['0'].source_url" class="img-fluid">
+              </div>
+              <p class="post-meta text-secondary mt-3 mb-1">
+                {{news.date | date: "dd - MM - yyyy"}}</p>
+              <h2 class="post-title" [innerHTML]="news.title.rendered">
+              </h2>
+              <h3 class="post-subtitle">
+                <p class="my-3">{{news.excerpt.rendered | slice: 3: 400}}...</p>
+              </h3>
+
+            </a>
+
+          </div>
+        </ng-masonry-grid-item>
+      </ng-masonry-grid>
+
+
+      <!-- Pager -->
+      <div class="d-flex">
+        <div class="clearfix" *ngIf="page.page > 1">
+          <button class="btn btn-danger d-flex  btn-rounded float-left" (click)="prevPage()">
+            <i class="material-icons">chevron_left</i>
+          </button>
+        </div>
+        <div class="clearfix">
+          <button class="btn  btn-danger d-flex btn-rounded float-right" (click)="nextPage()">
+            <i class="material-icons">chevron_right</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="loading" *ngIf="!newsList">
+  <div></div>
+</div>
+
+<hr>

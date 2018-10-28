@@ -1,0 +1,31 @@
+<ng-container *ngIf="news">
+    <header class="masthead"
+    [ngStyle]="{'background-image':'url('+news._embedded['wp:featuredmedia']['0'].source_url+') '}"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1 class="oswald" [innerHTML]="news.title.rendered" ></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container post-content">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto">
+          <div class="text-white my-4" [innerHTML]="content">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+</ng-container>
+<div class="loading" *ngIf="!news">
+    <div></div>
+  </div>

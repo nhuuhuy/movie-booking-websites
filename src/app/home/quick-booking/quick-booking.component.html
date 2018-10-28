@@ -1,0 +1,61 @@
+<section class="quick-booking">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 order-2 order-md-1">
+        <div class="quick-booking__left">
+          <div class="form-group">
+            <label for="">Chọn Phim</label>
+            <select name="movie" id="" (change)="getMovie($event.target.value)">
+              <option value="" disabled selected>Vui Lòng Chọn Phim</option>
+              <option *ngFor="let movie of movies" [value]="movie.MaPhim">{{movie.TenPhim}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="">Chọn Ngày</label>
+            <select name="day" id="" (change)="getShowtime($event.target.value)">
+              <option value="" disabled selected>Vui Lòng Chọn Ngày</option>
+              <ng-container *ngIf="movie">
+                <option *ngFor="let date of movie.LichChieu" [value]="date.MaLichChieu">{{date.NgayChieuGioChieu | date: "dd-MM-yyyy"}}</option>
+              </ng-container>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="">Chọn Suất Chiếu</label>
+            <select name="showtime" id="" (change)="selectShowTime()">
+              <option value="" disabled selected>Vui Lòng Chọn Suất Chiếu</option>
+              <option *ngIf="showtime" [value]="showtime.MaLichChieu">{{showtime.NgayChieuGioChieu| date: 'hh:mm bbbb'}}</option>
+            </select>
+
+          </div>
+          <ng-container *ngIf="selectDone && isUserLogin">
+            <a [routerLink]="['/checkout']" [queryParams]="{id:showtime.MaLichChieu, movie: movie.MaPhim}" class="btn btn-gradient__primary btn-rounded">
+              Đặt Vé
+            </a>
+          </ng-container>
+          <ng-container *ngIf="selectDone && !isUserLogin">
+            <a class="btn btn-gradient__primary btn-rounded" data-toggle="modal" data-target="#modalAuth">
+              Đặt Vé
+            </a>
+          </ng-container>
+          <ng-container *ngIf="!selectDone">
+            <button class="btn btn-gradient__primary btn-rounded">
+              Đặt Vé
+            </button>
+          </ng-container>
+        </div>
+
+      </div>
+      <div class="col-md-6 order-1 order-md-2">
+        <div class="quick-booking__right">
+          <h3 class="oswald">
+            MUA VÉ
+            <span>
+              ONLINE
+            </span>
+          </h3>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+
+<div class="modal fade modalUser" id="modalUser" tabindex="-1" role="dialog" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" >{{!user.TaiKhoan? 'Thêm Người Dùng':'Cập Nhật Người Dùng'}}</h4>
+        <button type="button" #close class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+            <form  autocomplete=”off” #fUser='ngForm' (ngSubmit)="user.TaiKhoan? update(fUser.value): register(fUser.value) ">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="text" autocomplete="off" autofill="off" name="TaiKhoan" [ngModel] = "user.TaiKhoan" #TaiKhoan='ngModel' id="TaiKhoan" class="form-control input-sm" placeholder="Tai khoan" [disabled]="user.TaiKhoan">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="text" autocomplete="off" name="HoTen" [ngModel]="user.HoTen" #HoTen='ngModel' id="HoTen" class="form-control input-sm" placeholder="HoTen">
+                    </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" autocomplete="off" name="Email" id="Email" #Email="ngModel" [ngModel]="user.Email" class="form-control input-sm" placeholder="Email Address">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="SoDT" autocomplete="off" id="SoDT" #SoDT="ngModel" placeholder="Số điện thoại" [ngModel]="user.SoDT" class="form-control input-sm">
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                          <select name="MaLoaiNguoiDung" #MaLoaiNguoiDung="ngModel" [ngModel]="user.MaLoaiNguoiDung" class="form-control input-sm">
+                            <option value="KhachHang" selected>Khách Hàng</option>
+                            <option value="QuanTri">Quản Trị</option>
+                          </select>
+                        </div>
+                      </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <input type="password" autocomplete="off" autocomplete="new-password" name="MatKhau" [ngModel]="user.MatKhau" #MatKhau="ngModel" id="MatKhau" class="form-control input-sm" placeholder="Password">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" [value]="user.TaiKhoan? 'Cập Nhật': 'Thêm'"  class="btn btn-rounded btn__primary">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

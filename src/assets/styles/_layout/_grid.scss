@@ -1,0 +1,14 @@
+.admin-lg{
+  margin-left:300px!important;
+  @include mq(tablet,max){
+    margin-left: 0!important;
+  }
+}
+.admin-sm{
+  @include mq(tablet,min){
+    margin-left: 50px!important;
+  }
+  @include mq(tablet,max){
+    margin-left: 0!important;
+  }
+}

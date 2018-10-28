@@ -1,0 +1,27 @@
+<nav  class="navbar ">
+
+  <ul class="side-nav">
+    <li class="side-nav-item">
+      <a href="#menuMovie" class="" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false">
+          <i class="material-icons">local_movies</i>
+        <span class="">Quản lý phim</span>
+      </a>
+      <ul class="collapse side-nav-sub" id="menuMovie">
+        <li class="side-nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a class="" routerLink="movie">Danh Sách Phim </a>
+        </li>
+        <li class="side-nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="" routerLink="add-movie">Thêm phim mới </a>
+        </li>
+      </ul>
+
+    </li>
+    <li class="side-nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <a routerLink="user" class="">
+          <i class="material-icons">people_outline</i>
+        <span class="">Quản lý Thành viên</span>
+      </a>
+    </li>
+
+  </ul>
+</nav>

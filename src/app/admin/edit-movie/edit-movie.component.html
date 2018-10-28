@@ -1,0 +1,67 @@
+<ng-container *ngIf="movie">
+  <div class="card card-form">
+    <div class="card-header">
+      {{movie.TenPhim}}
+    </div>
+    <form class="p-3" #fAddMovie='ngForm' (ngSubmit)="UpdateMovie(fAddMovie.value, Image.files )">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group ">
+            <label for="">Mã Phim</label>
+            <input type="text" name="MaPhim" id="" class="form-control" placeholder="" [ngModel]="movie.MaPhim" disabled #MaPhim="ngModel">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="">Tên Phim</label>
+            <input type="text" [ngModel]="movie.TenPhim" name="TenPhim" id="" class="form-control" placeholder="" #TenPhim="ngModel">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="">Ngày khỏi chiếu</label>
+            <my-date-picker name="NgayKhoiChieu" id="NgayKhoiChieu" [ngModel]="startDate" #NgayKhoiChieu='ngModel'></my-date-picker>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="">Đánh giá</label>
+            <!-- <input type="number" name="DanhGia" id="" class="form-control" [ngModel]="movie.DanhGia" placeholder="" #DanhGia="ngModel"> -->
+            <bar-rating name="DanhGia" [(ngModel)]="movie.DanhGia" [theme]="'fontawesome'" [max]="5"></bar-rating>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="">Poster</label>
+            <label class="d-flex ">
+              <i class="material-icons text-secondary " style="font-size:50px; cursor: pointer;">file_upload</i>
+              <input #Image type="file" name="" id="" class="form-control d-none" placeholder="">
+              <div class="img-wrapper ml-3"  style="width:50px; height: auto;">
+              <img [src]="movie.HinhAnh" class="img-fluid" alt="">
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="">Trailer</label>
+            <input type="text" name="Trailer" [ngModel]="movie.Trailer" id="" class="form-control" placeholder="" #Trailer="ngModel">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group">
+            <label for="">Mô tả</label>
+            <!-- <textarea id="" name="MoTa" [ngModel]="movie.MoTa" class="form-control" cols="30" rows="10" #MoTa="ngModel" ></textarea> -->
+            <textarea [froalaEditor]="{ heightMin: 250}" [(froalaModel)]="movie.MoTa"></textarea>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn  btn-rounded btn__primary d-block ml-auto ">Cập Nhật</button>
+    </form>
+  </div>
+</ng-container>

@@ -1,0 +1,34 @@
+<!-- Modal -->
+<div class="modal fade search home-modal" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+        <i class="material-icons md-24">clear</i>
+      </button>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="form-group search__form">
+            <label class="search__label" for="">
+              <i class="material-icons">search</i>
+            </label>
+            <input  type="text" name="" id="" class="form-control search__input" placeholder="Nhập tên phim cần tìm" aria-describedby="helpId" (keyup)="onSearch($event)" >
+          </div>
+          <div class="search__result" *ngIf="searchArr | async">
+            <ul class="list-unstyled">
+              <li class="media" *ngFor="let movie of searchArr | async">
+                <a class="d-flex mr-3" [routerLink]="['/phim',movie.TenPhim]" [queryParams]="{id:movie.MaPhim}">
+                  <img [src]=movie.HinhAnh alt="">
+                </a>
+                <div class="media-body">
+                  <a [routerLink]="['/phim',movie.TenPhim|slug]" [queryParams]="{id:movie.MaPhim}">
+                    <h5 class="movie__card-title">{{ (movie.TenPhim.length>25)? (movie.TenPhim | slice:0:25)+'..':(movie.TenPhim)}}</h5>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

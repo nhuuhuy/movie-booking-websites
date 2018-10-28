@@ -1,0 +1,56 @@
+<div class="card card-form ">
+  <div class="card-header">
+    Thêm Phim
+  </div>
+  <form class="p-3" #fAddMovie='ngForm' (ngSubmit)="AddMovie(fAddMovie.value, Image.files )">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Tên Phim</label>
+          <input type="text" [ngModel]="movie.TenPhim" name="TenPhim" id="" class="form-control" placeholder="" #TenPhim="ngModel">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="">Ngày khỏi chiếu</label>
+          <my-date-picker name="NgayKhoiChieu" id="NgayKhoiChieu" [ngModel]="startDate" #NgayKhoiChieu='ngModel'></my-date-picker>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Đánh giá</label>
+          <!-- <input type="number" name="DanhGia" id="" class="form-control" [ngModel]="movie.DanhGia" placeholder="" #DanhGia="ngModel"> -->
+          <bar-rating name="DanhGia" [ngModel]="movie.DanhGia" #DanhGia="ngModel" [theme]="'fontawesome'" [max]="5"></bar-rating>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+
+          <label for="">Poster</label>
+          <label class="d-block">
+            <i class="material-icons text-secondary " style="font-size:50px; cursor: pointer;">file_upload</i>
+            <input #Image type="file" name="" id="" class="form-control d-none" placeholder="">
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <label for="">Trailer</label>
+          <input type="text" name="Trailer" [ngModel]="movie.Trailer" id="" class="form-control" placeholder="" #Trailer="ngModel">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="">Mô tả</label>
+          <!-- <textarea id="" name="MoTa" [ngModel]="movie.MoTa" class="form-control" cols="30" rows="10" #MoTa="ngModel" ></textarea> -->
+          <textarea [froalaEditor]="{ heightMin: 200}" [(froalaModel)]="movie.MoTa"></textarea>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn  btn-rounded btn__primary d-block ml-auto ">Đăng Phim</button>
+  </form>
+</div>
